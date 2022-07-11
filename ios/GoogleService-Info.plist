@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>368165284861-ems48tclpqn3vielbcs4vj97e2qbkine.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.368165284861-ems48tclpqn3vielbcs4vj97e2qbkine</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>368165284861-pfh181fd7hq1olhv2if48sj94ok0sc35.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDNEgbZ-ED7RKu5-MVl-DLUYYK5c8TGpII</string>
+	<key>GCM_SENDER_ID</key>
+	<string>368165284861</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kokui</string>
+	<key>PROJECT_ID</key>
+	<string>yesmk-6aaac</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yesmk-6aaac.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:368165284861:ios:37a12e2d7e3a1423c0c794</string>
+	<key>DATABASE_URL</key>
+	<string>https://yesmk-6aaac-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1067544634333",
+    "firebase_url": "https://kokui-898f6-default-rtdb.firebaseio.com",
+    "project_id": "kokui-898f6",
+    "storage_bucket": "kokui-898f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067544634333:android:edb0f9a7e198ee3d690c34",
+        "android_client_info": {
+          "package_name": "com.kokui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067544634333-afg013ct1i7r3ucp01bl1knhkr173sig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSaUAKuKh-s_xpjXNvloR6o54faiVtrMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067544634333-afg013ct1i7r3ucp01bl1knhkr173sig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

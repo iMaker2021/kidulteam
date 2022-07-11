@@ -1,0 +1,36 @@
+{
+  "HorizonLayout": [
+    {
+      "layout": "circleCategory"
+    },
+    {
+      "layout": "bannerHigh",
+      "tag": 273
+    },
+    {
+      "imageBanner": "https://mstore.io/wp-content/uploads/2017/11/woman-large.png",
+      "layout": "bannerImage",
+      "height": 118,
+      "category": 22
+    },
+    {
+      "imageBanner": "https://mstore.io/wp-content/uploads/2017/06/man-large.png",
+      "layout": "bannerImage",
+      "height": 118,
+      "category": 19
+    },
+    {
+      "name": "MenANDWomen",
+      "image": "",
+      "layout": "threeColumn",
+      "category": 22
+    },
+    {
+      "name": "Workshop",
+      "image": "",
+      "layout": "twoColumn",
+      "category": 21
+    }
+  ],
+  "MainColor": "#000000"
+}
