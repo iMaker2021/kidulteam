@@ -144,7 +144,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.kokui"
+        applicationId "com.kiduItem"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 30

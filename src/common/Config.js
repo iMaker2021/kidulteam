@@ -4,15 +4,15 @@ import Images from "./Images";
 import Constants from "./Constants";
 import Icons from "./Icons";
 
-const consumerKey = "ck_968bfcb34aaaec09d0aa5c051a3d25c52edabb1e";
-const consumerSecret = "cs_52b67ef15194d1b06b005ab58bc630579458361c";
+const consumerKey = "ck_eeb2ce97c9dc29efa82e0f9821d9821688b7bfa8";
+const consumerSecret = "cs_9a7fc69c90277eac61727d3e6c15d213c63ca268";
 
 export default {
   /**
    * Step 1: change to your website URL and the wooCommerce API consumeKey
    */
   WooCommerce: {
-    url: "https://kokui.net",
+    url: "https://kingsleymall.com",
     consumerKey,
     consumerSecret,
   },
