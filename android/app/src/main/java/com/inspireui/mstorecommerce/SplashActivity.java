@@ -1,4 +1,4 @@
-package com.kokui;
+package com.kiduItem;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
