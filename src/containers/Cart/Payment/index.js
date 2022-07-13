@@ -271,6 +271,7 @@ class PaymentOptions extends PureComponent {
 
   render() {
     const { list } = this.props.payments;
+    console.log(list);
     const {
       theme: {
         colors: { text },

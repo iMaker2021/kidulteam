@@ -1,4 +1,4 @@
-package com.kokui;
+package com.kiduItem;
 
 import android.app.Application;
 
