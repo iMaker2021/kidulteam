@@ -10,13 +10,14 @@ import CategoriesItem from "./CategoriesItem";
 import styles from "./styles";
 
 const CategoriesList = React.memo(() => {
-  const categoryList = useSelector((state) =>
-    state.categories.list?.filter((category) => category.parent === 0)
-  );
+
+  const categoryList = useSelector((state) =>{
+    return state.categories.list?.filter((category) => category.parent === 0)
+  });
 
   // remove duplicate item
   const mainCategories = React.useMemo(
-    () => [...new Map(categoryList.map((item) => [item.id, item])).values()],
+    () => [...new Map(categoryList.map((item) => [item.id, item] )).values()],
     [categoryList]
   );
 

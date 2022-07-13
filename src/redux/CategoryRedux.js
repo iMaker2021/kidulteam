@@ -25,6 +25,14 @@ export const actions = {
     dispatch({ type: types.FETCH_CATEGORIES_PENDING });
     const json = await WooWorker.getCategories();
     console.log(json,'获取商品分类列表')
+    // console.log("***************************************")
+    // console.log(json[0].menu_order)
+    // for(let i in json[0]){
+    //   console.log(i);
+    // }
+    
+    // console.log("===========================================")
+    
 
     if (json === undefined) {
       dispatch(actions.fetchCategoriesFailure("Can't get data from server"));

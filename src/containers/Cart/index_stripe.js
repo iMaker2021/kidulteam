@@ -12,7 +12,7 @@ import {
 import { PaypalPanel, StepIndicator, StripePanel } from "@components";
 import { WooWorker } from "api-ecommerce";
 import StripeAPI from "@services/StripeAPI";
-import stripe from "tipsi-stripe";
+import stripe from "@stript/stripe-react-native";
 import { Languages, Images, Config } from "@common";
 import { BlockTimer, toast } from "@app/Omni";
 import Modal from "react-native-modalbox";
