@@ -84,7 +84,8 @@
     "tipsi-stripe": "^9.2.0",
     "urijs": "1.19.10",
     "validate.js": "0.13.1",
-    "wpapi": "^1.2.1"
+    "wpapi": "^1.2.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "7.17.7",
