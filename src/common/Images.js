@@ -11,9 +11,7 @@ const Images = {
   PayPal: require("@images/PayPal.png"),
   CashOnDelivery: require("@images/cash_on_delivery.png"),
   PlaceHolder: require("@images/placeholderImage.png"),
-  PlaceHolderURL:
-    'https://mrmagicdaveunderwear.com/wp-content/uploads/2022/05/u6845924041960081073fm253fmtautoapp138fJPEG-small.webp',
-
+  PlaceHolderURL:'https://kingsleymall.com/wp-content/uploads/2022/07/noImage.png',
   IconWishList: require("@images/icons/icon-love.png"),
   IconCart: require("@images/icons/icon-cart.png"),
   IconShare: require("@images/icons/icon-share.png"),
