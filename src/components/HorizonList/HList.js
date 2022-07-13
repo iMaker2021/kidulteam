@@ -187,14 +187,13 @@ class HorizonList extends PureComponent {
     switch (config.layout) {
       case Constants.Layout.circleCategory: //顶部导航栏
         return (
-          // <Categories
-          //   config={config}
-          //   categories={this.props.list}
-          //   items={data}
-          //   type={config.theme}
-          //   onPress={this.showProductsByCategory}
-          // />
-          <View></View>
+          <Categories
+            config={config}
+            categories={this.props.list}
+            items={data}
+            type={config.theme}
+            onPress={this.showProductsByCategory}
+          />
         );
       case Constants.Layout.BannerSlider: //轮播图
         return (

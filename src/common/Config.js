@@ -50,21 +50,12 @@ export default {
       colors: ["#fa709a", "#fee140"],
       label: "Women",
     },
-  ],
-  HomeCategories_AR: [
     {
-      category: 19,
-      image: require("@images/categories_icon/ic_shorts.png"),
-      colors: ["#4facfe", "#00f2fe"],
-      label: "Men",
-    },
-    {
-      category: 21,
-      image: require("@images/categories_icon/ic_tshirt.png"),
-      colors: ["#43e97b", "#38f9d7"],
-      label: "Workshop",
-    },
-    {
+      category: 22,
+      image: require("@images/categories_icon/ic_panties.png"),
+      colors: ["#fa709a", "#fee140"],
+      label: "Women",
+    },    {
       category: 22,
       image: require("@images/categories_icon/ic_panties.png"),
       colors: ["#fa709a", "#fee140"],
@@ -90,6 +81,17 @@ export default {
       colors: ["#fa709a", "#fee140"],
       label: "Women",
     },
+    {
+      category: 22,
+      image: require("@images/categories_icon/ic_panties.png"),
+      colors: ["#fa709a", "#fee140"],
+      label: "Women",
+    },    {
+      category: 22,
+      image: require("@images/categories_icon/ic_panties.png"),
+      colors: ["#fa709a", "#fee140"],
+      label: "Women",
+    },
   ],
   HomeCategories_TC: [
     {
@@ -105,6 +107,17 @@ export default {
       label: "Workshop",
     },
     {
+      category: 22,
+      image: require("@images/categories_icon/ic_panties.png"),
+      colors: ["#fa709a", "#fee140"],
+      label: "Women",
+    },
+    {
+      category: 22,
+      image: require("@images/categories_icon/ic_panties.png"),
+      colors: ["#fa709a", "#fee140"],
+      label: "Women",
+    },    {
       category: 22,
       image: require("@images/categories_icon/ic_panties.png"),
       colors: ["#fa709a", "#fee140"],
