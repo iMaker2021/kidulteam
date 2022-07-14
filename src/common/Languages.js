@@ -338,6 +338,7 @@ export default new LocalizedStrings({
     RegisterErr:"Please login first",
     MemberErr:"You are not a member, please register as a member first",
     RegisteredMembers:"Registered Member",
+    MemberSuccess:"Registered member successfully",
     MyPoints:"My Points",
     MyCoupon:"My Coupon",
     PointsErr:"You don't have enough credits",
@@ -348,7 +349,10 @@ export default new LocalizedStrings({
     ConversionCode:"Conversion Code",
     ForSuccessful:"Redeem successful, can go to my coupon to view",
     MenANDWomen:'Men & Women',
-    Workshop:'Workshop'
+    Workshop:'Workshop',
+    ToyStory:'Toy Story',
+    AliceInWonderland:"Alice in Wonderland"
+
   },
   cn: {
     Exit: "退出",
@@ -656,6 +660,7 @@ export default new LocalizedStrings({
     RegisterErr:"请先登录",
     MemberErr:"您不是会员，请先注册成为会员",
     RegisteredMembers:"注册会员",
+    MemberSuccess:"注册会员成功",
     MyPoints:"我的积分",
     MyCoupon:"我的优惠券",
     PointsErr:"您的积分不足",
@@ -666,7 +671,9 @@ export default new LocalizedStrings({
     ConversionCode:"兑换码",
     ForSuccessful:"兑换成功，可前往我的优惠券查看",
     MenANDWomen:'男女装',
-    Workshop:'手工艺品'
+    Workshop:'手工艺品',
+    ToyStory:'Toy Story',
+    AliceInWonderland:"Alice in Wonderland"
   },
   tc: {
     Exit: "退出",
@@ -974,6 +981,7 @@ export default new LocalizedStrings({
     RegisterErr:"請先登錄",
     MemberErr:"您不是會員，請先註冊成為會員",
     RegisteredMembers:"註冊會員",
+    MemberSuccess:"註冊會員成功",
     MyPoints:"我的積分",
     MyCoupon:"我的優惠券",
     PointsErr:"您的積分不足",
@@ -984,6 +992,8 @@ export default new LocalizedStrings({
     ConversionCode:"兌換碼",
     ForSuccessful:"兌換成功，可前往我的優惠券查看",
     MenANDWomen:'男女裝',
-    Workshop:'手工藝品'
+    Workshop:'手工藝品',
+    ToyStory:'Toy Story',
+    AliceInWonderland:"Alice in Wonderland"
   }
 });
