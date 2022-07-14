@@ -307,9 +307,9 @@ class Delivery extends PureComponent {
         <TextInputMask
           type="cel-phone"
           options={{
-            maskType: 'INTERNATIONAL',
-            // withDDD: true,
-            // dddMask: '(99)'
+            maskType: 'BRL',
+            withDDD: true,
+            dddMask: '+99999999999'
           }}
           style={textboxStyle}
           onChangeText={(value) => locals.onChange(value)}
