@@ -1,91 +1,112 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useCallback } from 'react';
 import { useSelector, connect } from "react-redux";
-import styles from './styles'
-import { View, Text, TouchableOpacity, Image, TouchableHighlight, Modal } from "react-native";
+import styles from './styles';
+import { View, Text, TouchableOpacity, Image, TouchableHighlight, Modal ,SafeAreaView,ScrollView,
+  RefreshControl} from "react-native";
 import { Languages, Tools, withTheme } from "@common";
 import { Images } from "@common";
 import { UserProfileItem, } from "@components";
-import { pushCoupon ,addIntegral} from '@services/Database'
+import { pushCoupon ,addIntegral} from '@services/Database';
 import { toast } from "@app/Omni";
-import WPUserAPI from '../../services/WPUserAPI'
+import WPUserAPI from '../../services/WPUserAPI';
 import database from '@react-native-firebase/database';
 
+const wait = (timeout) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
+}
+
 const MemberCenter = ({ navigation ,theme}) => {
-  const [couponsData, setCouponsData] = useState([]) //所有可兑换的优惠券信息
-  const [modalVisible, setModalVisible] = useState(false) //显示或隐藏兑换优惠券弹窗
-  const [selectCoupon, setSelectCoupon] = useState(null) //选择的优惠券信息
-  const [oldIntegral,setOldIntegral] = useState(0) //使用过的积分
-  const user = useSelector((state) => state.user.user)
-  const { id: userId } = user
-  const [availablePoint, setAvailablePoint] = useState(0)
-  const myOrders = useSelector((state) => state.carts.myOrders)
+  const [refreshing, setRefreshing] = useState(false);
+  const [couponsData, setCouponsData] = useState([]) ; // 所有可兑换的优惠券信息
+  const [modalVisible, setModalVisible] = useState(false); // 显示或隐藏兑换优惠券弹窗
+  const [selectCoupon, setSelectCoupon] = useState(null); // 选择的优惠券信息
+  const [oldIntegral,setOldIntegral] = useState(0); // 使用过的积分
+  const user = useSelector((state) => state.user.user);
+  const { id: userId } = user;
+  const [availablePoint, setAvailablePoint] = useState(0);
+  const myOrders = useSelector((state) => state.carts.myOrders);
   const name = Tools.getName(user);
 
-  useEffect(() => {
-    getCouponsList()
-    getUsedPoints()
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    getCouponsList();
+    getUsedPoints();
+    wait(2000).then(() => setRefreshing(false));
   }, []);
 
-  //已使用的积分
+  useEffect(() => {
+    getCouponsList();
+    getUsedPoints();
+  }, []);
+
+  // 已使用的积分
   const getUsedPoints = () => {
     database()
       .ref("/users")
       .on("value", (values) => {
-        let points = 0
+        let points = 0;
         myOrders.forEach(item => {
           if (item.status === 'completed') {
-            points += Number(item.total)
+            points += Number(item.total);
           }
         });
-        const countPoints = Number(points) - Number(values.val()[userId].usedPoints)
-        setAvailablePoint(Math.round(countPoints))
-        setOldIntegral(values.val()[userId].usedPoints)
-      })
-  }
+        const countPoints = Number(points) - Number(values.val()[userId].usedPoints);
+        console.log(countPoints);
+        setAvailablePoint(Math.round(countPoints));
+        setOldIntegral(values.val()[userId].usedPoints);
+      });
+  };
 
   const getCouponsList = async () => {
-    let data = await WPUserAPI.getAll()
+    let data = await WPUserAPI.getAll();
+    console.log(data);
     if (data.length) {
 
-      setCouponsData([...data])
+      setCouponsData([...data]);
     }
-  }
+  };
 
-  //路由跳转
+  // 路由跳转
   const _handlePress = (routeName) => {
     navigation.navigate(routeName);
   };
 
-  //点击兑换优惠券
+  // 点击兑换优惠券
   const convertClick = (item) => {
-    setSelectCoupon(item)
-    setModalVisible(true)
-  }
+    setSelectCoupon(item);
+    setModalVisible(true);
+  };
 
-  //确定兑换优惠券
+  // 确定兑换优惠券
   const confirm = () => {
     if(selectCoupon.used_by.length){
       for(const i of selectCoupon.used_by){
-        if(i==userId){
-          toast(Languages.CouponErr)
-          return
+        if(i === userId){
+          toast(Languages.CouponErr);
+          return;
         }
       }
     }
     if(availablePoint<Number(selectCoupon.amount)*10){
-      toast(Languages.PointsErr)
-      return
+      toast(Languages.PointsErr);
+      return;
     }
-    setModalVisible(false)
-    pushCoupon(userId, selectCoupon)
-    addIntegral(userId,oldIntegral+Number(selectCoupon.amount)*10)
-    setOldIntegral(oldIntegral+Number(selectCoupon.amount)*10)
-    setAvailablePoint(availablePoint-Number(selectCoupon.amount)*10)
-    toast(Languages.ForSuccessful)
-  }
+    setModalVisible(false);
+    pushCoupon(userId, selectCoupon);
+    addIntegral(userId,oldIntegral+Number(selectCoupon.amount)*10);
+    setOldIntegral(oldIntegral+Number(selectCoupon.amount)*10);
+    setAvailablePoint(availablePoint-Number(selectCoupon.amount)*10);
+    toast(Languages.ForSuccessful);
+  };
 
 
   return (
+    <SafeAreaView style={styles.container}>
+    <ScrollView refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
     <View style={{backgroundColor: theme.colors.background, flex: 1  }}>
       <View style={[styles.container]}>
         <View style={styles.header}>
@@ -106,7 +127,7 @@ const MemberCenter = ({ navigation ,theme}) => {
           </View>
         </View>
       </View>
-      <UserProfileItem label={Languages.MyPoints} value={availablePoint} />
+      <UserProfileItem label={Languages.MyPoints} value={availablePoint}  />
       <UserProfileItem
         icon
         onPress={() => _handlePress('Coupons')}
@@ -158,6 +179,8 @@ const MemberCenter = ({ navigation ,theme}) => {
         </View>
       </Modal> : null}
     </View >
+    </ScrollView>
+    </SafeAreaView>
   )
 }
 const mapStateToProps = (state) => {
